@@ -1,0 +1,10 @@
+Hello world!
+
+This is a very interesting ciphertext. Please read it carefully.
+It contains very sensitive information that should not get into the wrong hands.
+Always encrypt it with highly secure methods.
+
+Best
+Your Crpyto-Guy
+
+p.s. The secret word is "SiMsAlAbIm"
