@@ -5,6 +5,8 @@ Classical ciphers are ciphers that are not considered modern anymore.
 Nobody actually uses them anymore.
 This effort is just for fun :)
 
+[![Code Climate](https://codeclimate.com/github/DominicBreuker/cryptanalysis.png)](https://codeclimate.com/github/DominicBreuker/cryptanalysis)
+
 For a quick start, run `python main.py` and you can watch every supported cipher being broken once.
 
 Currently, the following ciphers are supported:
@@ -106,10 +108,11 @@ from breaking.vigenere import VigenereBreak
 ciphertext, masker = Masker.from_text("... your ciphertext ...")
 
 s = IocScorer(alphabet_size=26)
-KeylengthDetector(s).detect(ciphertext)
+KeylengthDetector(s).detect(ciphertext) #  prints candidate key lengths
 
+key_length = 4 #  assume you want to try key length 4
 scorer = NgramScorer(load_ngrams(1)) #  must be 1, because Caesar ciphers are interleved
-breaker = VigenereBreak(7, scorer)
+breaker = VigenereBreak(key_length, scorer)
 decryption, score, key = breaker.guess(ciphertext)[0]
 print("Vigenere decryption (key={}, score={}):\n---\n{}---\n"
       .format(key, score, masker.extend(decryption)))
@@ -121,7 +124,7 @@ Pick a ciphertext and break it using English quadgram statistics.
 We generate 3 local optima and print the best result.
 If that does not deliver a solution, generate more local optima.
 Each optimization run will print a short line with results.
-You are looking for a score significatly better than most of the others that are printed.
+You are looking for a score significantly better than most of the others that are printed.
 
 ```python
 from data.en import load_ngrams
