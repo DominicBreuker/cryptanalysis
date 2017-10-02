@@ -1,4 +1,4 @@
-# cryptanalysis
+# Cryptanalysis
 
 These are a couple of scripts illustrating how to break classical ciphers.
 Classical ciphers are ciphers that are not considered modern anymore.
@@ -138,5 +138,5 @@ print("Substitution decryption (key={}, score={}):\n---\n{}---\n"
 
 # Acknowledgements
 
-The code in this repository is inspired a lot by (this site)[http://practicalcryptography.com/].
-Many thanks to the owner of it!
+The code in this repository is inspired a lot by [practicalcryptography.com](http://practicalcryptography.com/).
+Many thanks to the owner of this site!
